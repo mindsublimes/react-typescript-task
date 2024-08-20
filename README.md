@@ -1,7 +1,5 @@
 # React Task
 
-This README provides instructions for setting up and running the project locally.
-
 ## Getting Started
 
 Follow these steps to get your development environment up and running:
@@ -11,7 +9,7 @@ Follow these steps to get your development environment up and running:
 Clone this repository to your local machine using the following command:
 
 ```
-git clone https://github.com/yourusername/your-repo-name.git
+git clone https://github.com/mindsublimes/react-typescript-task
 ```
 
 ### 2. Install Dependencies
@@ -19,7 +17,7 @@ git clone https://github.com/yourusername/your-repo-name.git
 Navigate to the project directory:
 
 ```
-cd your-repo-name
+cd react-typescript-task
 ```
 
 Install the project dependencies using npm. Make sure you are using Node.js version 20, as specified in the `package.json` file. If you are not on the correct version, please use a version manager like `nvm` to switch to the appropriate version.
@@ -36,7 +34,7 @@ Start the project in development mode with the following command:
 npm run dev
 ```
 
-Your project will now be running in development mode and should be accessible at `http://localhost:3000` (or the port specified in your configuration).
+Your project will now be running in development mode and should be accessible at `http://localhost:5173`.
 
 ## Project Structure
 
@@ -61,6 +59,7 @@ Constant variables.
 ### `/components`
 
 React components used in the project.
+
 
 ## Assumptions/Decisions
 
