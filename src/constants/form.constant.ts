@@ -1,1 +1,1 @@
-export const DISCOUNT_CODE_LENGTH = 9
+export const DISCOUNT_CODE_LENGTH = 9;

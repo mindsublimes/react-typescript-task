@@ -42,20 +42,27 @@ Your project will now be running in development mode and should be accessible at
 
 Here's an overview of the project's directory structure:
 
-
 ### `/store/store.ts`
+
 Configured redux store.
 
 ### `/store/slices`
+
 Redux slices used throughout the app.
 
 ### `/utils`
+
 Utility functions used across the application.
 
 ### `/constants`
+
 Constant variables.
 
 ### `/components`
+
 React components used in the project.
 
+## Assumptions/Decisions
 
+- Creating local state for discount code as we don't have to store that in application state
+- On form submission, app reducer state and local discountCode state is reset

@@ -2,7 +2,7 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import { generateRandomCode } from '../utils/form.util';
 import { useSelector } from '../store';
 import { useDispatch } from 'react-redux';
-import { updateValue } from '../store/slices/form.slice';
+import { resetForm, updateValue } from '../store/slices/form.slice';
 import { DISCOUNT_CODE_LENGTH } from '../constants/form.constant';
 
 export const Form = () => {
@@ -25,7 +25,7 @@ export const Form = () => {
     const value = e.target.value;
 
     if (field === 'discount') {
-      setDiscountCode(e.target.value);
+      setDiscountCode(value.toUpperCase());
     } else if (field === 'option' || field === 'notes') {
       dispatch(updateValue({ field, value }));
     }
@@ -34,6 +34,8 @@ export const Form = () => {
   /** Handle form submission */
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    dispatch(resetForm());
+    setDiscountCode('');
   };
 
   return (
@@ -52,6 +54,7 @@ export const Form = () => {
               type="radio"
               required
               value="a"
+              checked={formState.option === 'a'}
               onChange={handleChange}
             />
             <label htmlFor="optionA">Option A</label>
@@ -63,6 +66,7 @@ export const Form = () => {
               type="radio"
               required
               value="b"
+              checked={formState.option === 'b'}
               onChange={handleChange}
             />
             <label htmlFor="optionB">Option B</label>
@@ -74,6 +78,7 @@ export const Form = () => {
               type="radio"
               required
               value="c"
+              checked={formState.option === 'c'}
               onChange={handleChange}
             />
             <label htmlFor="optionC">Option C</label>
@@ -92,6 +97,7 @@ export const Form = () => {
             id="discount"
             type="text"
             name="discount"
+            required
             pattern={`[A-Z0-9]{${DISCOUNT_CODE_LENGTH}}`}
             title="The code must be 9 characters long, using uppercase letters and digits only."
             placeholder="Discount code"

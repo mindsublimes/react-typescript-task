@@ -1,4 +1,4 @@
-import { DISCOUNT_CODE_LENGTH } from "../constants/form.constant";
+import { DISCOUNT_CODE_LENGTH } from '../constants/form.constant';
 
 export const generateRandomCode = (length = DISCOUNT_CODE_LENGTH) => {
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
